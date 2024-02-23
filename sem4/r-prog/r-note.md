@@ -98,9 +98,11 @@ There are functions like ``na.rm`` to remove values before computing.
 
  2. __Pipes__: Used in a pipeline to chain series of functions calls
  ```R
- function sum(x,y)
- function sub()
- one()%>% two()
+filtered_cars %>%
+  filter(year > 2010) %>%
+  summarize(average_price = round(mean(price), 2)) %>%
+  print()
+
  ```
 3. __dplyr package__: grammer of data manipulation since it solves many challenges of data manipulation, the functions like `filter,arrange,select,mutate,summarise,group_by` are part of __dplyr__.
 ```R
